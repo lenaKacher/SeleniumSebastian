@@ -11,8 +11,8 @@ import org.testng.annotations.Test;
 public class UserLoginAndLogout extends TestBase {
 
     // Test data
-    protected String userName = "Tester01";
-    protected String password = "Stopp123";
+    protected String userName = "Waters";
+    protected String password = "User135";
 
     @Test(description = "Einfacher login und logout")
     protected void testUserLoginAndLogout() {

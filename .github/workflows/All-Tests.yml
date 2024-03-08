@@ -6,14 +6,16 @@ on:
   # Triggers the workflow e.g. on push or pull request events but only for the "master" branch
  
   # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
+    push:
+      branches:
+        - main
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a job called "build"
   build:
     # The type of runner that the job will run on
-    runs-on: self-windows
+    runs-on: ubuntu-latest
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
