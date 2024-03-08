@@ -1,0 +1,18 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="testSuites1" verbose="1">
+
+    <listeners>
+        <listener class-name="de.proficom.advantageshop.reporting.ExtentTestListener"></listener>
+    </listeners>
+
+    <test name="tests">
+        <classes>
+            <class name="de.proficom.advantageshop.tests.TabletFiltering"></class>
+            <class name="de.proficom.advantageshop.tests.AddSpeakerToCart"></class>
+            <class name="de.proficom.advantageshop.tests.UserLoginAndLogout"></class>
+            <class name="de.proficom.advantageshop.tests.ContactUs"></class>
+        </classes>
+    </test>
+
+</suite>

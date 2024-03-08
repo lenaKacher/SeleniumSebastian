@@ -1,0 +1,41 @@
+pipeline {
+
+    agent any 
+        
+    options {
+    	timestamps()
+	    buildDiscarder(logRotator(numToKeepStr: '3', artifactNumToKeepStr: '3'))  
+    }
+    
+	stages {
+
+       	stage ('test') {
+			steps {
+                 sh "mvn clean test \
+                 -DdriverType='CHROME-REMOTE' \
+                 -Denvironment='http://advantage.proficom.de:8080/#/' \
+                 -DsuiteXmlFile='testsuites/advantageshop/All-Tests.xml' "
+			}
+		}
+    }
+    
+    post {
+           always {
+               archiveArtifacts '**/target/surefire-reports/**'
+               publishHTML (
+               		target: [
+               			allowMissing: false,
+               			alwaysLinkToLastBuild: true,
+               			keepAll: true,
+              			reportDir: 'target/surefire-reports',
+               			reportFiles: 'TestReport.html',
+               			reportName: 'Test-Automation-Report'
+               		]
+              )
+           }
+           cleanup {
+              cleanWs()
+           }
+    }
+
+}

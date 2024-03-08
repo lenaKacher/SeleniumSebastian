@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="TC-04-ContactUs">
+
+    <listeners>
+        <listener class-name="de.proficom.advantageshop.reporting.ExtentTestListener"></listener>
+    </listeners>
+
+    <test name="TC-04-ContactUs">
+        <classes>
+            <class name="de.proficom.advantageshop.tests.ContactUs"/>
+        </classes>
+    </test>
+
+</suite>

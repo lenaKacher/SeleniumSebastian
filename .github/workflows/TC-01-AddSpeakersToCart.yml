@@ -1,0 +1,55 @@
+# This is a basic workflow to help you get started with Actions
+
+name: TC-01-AddSpeakersToCart
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow e.g. on push or pull request events but only for the "master" branch
+ 
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+    inputs:
+      Ddriver_Type:
+        description: 'Choose a Driver Type!'
+        type: choice
+        default: CHROME-REMOTE
+        options:
+          - FIREFOX-REMOTE
+          - CHROME-REMOTE
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  
+  # This workflow contains a job called "build"
+  build:
+    env:
+      mavenParams: -DdriverType="${{ inputs.Ddriver_Type }}" -Denvironment="http://advantage.proficom.de:8080/#/" -DsuiteXmlFile="testsuites/advantageshop/TC-01-AddSpeakersToCart.xml"
+    # The type of runner that the job will run on
+    runs-on: self-windows
+     
+      
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v3
+    
+   
+      # Runs a single command using the runners shell
+      - name: Run a one-line script(Test)
+        run: 'mvn clean test ${{ env.mavenParams }}'
+      
+      - name: Test-Summary
+        uses: test-summary/action@v2
+        with:
+          paths: '**/target/surefire-reports/junitreports/TEST-*.xml'
+        if: always()
+      
+           
+      - name: Save Test-Report
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: Test-Automation-Report
+          path: '**/target/surefire-reports/**'
+     

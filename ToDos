@@ -1,0 +1,32 @@
+
+- documentation - Bilder besser benennen () --> keine Umlaute ! --> gemacht
+
+- TestListener wird in der Suite angegeben, ist der wirklich auch nochmal pro Klasse notwendig?
+-- nur notwendig in der Klasse , aber nicht in der Suite, da es schon in der Klasse geschrieben ist
+-- ich möchte das nur in der Suite haben, geht das? -> es ist möglich , aber Extent Reports wird es nur über Suite ausführbar, da Listeners nur in Suite spezifiziert sind
+
+
+- was hat es hiermit auf sich?  //problems with firefox, problems by use of remote and also normal one, look into that later
+    -- Lokal Ausführung von tests in Firefox funktioniert jetzt
+    -- Remote Ausführung von Tests in firefox funktioniert jetzt
+
+- general examples in ein eigenes Projekt -> schon gemacht, aber noch keine Sache von General Examples hier gelöscht
+- and die strings.properties denken -> mit in das andere Projekt (gemacht)
+-> Boni Garcia Beispielanwendung: -> koennen wir die Anwendung selber hosten? (Buch gelesen, in one notes geschrieben was ich herausgefunden habe)
+Frage:
+- Können wir diese Auslagern Variante mit den Pipelines nutzen?
+
+
+Ideen:
+- Grid v4 ansteuern -- schon gemacht (Grid v4 running und Reports funktionieren auch gut)
+- password service für Login hinzufuegen oder nach Alternativen suchen -> Best Practice 'Login Credentials in Repository'
+(es gibt eine Möglichkeit über Jenkins PW's einzufügen --> wie verhält sich das bei lokaler Ausführung?)
+
+Neue Features in Selenium v4:
+- Ansteuerung Dev Tools? (auslesen der Web Konsole)
+- neue Methoden in der Action Class
+- relative locators
+- verbessertes Window/Tab Management
+
+Ganz zum Schluss (Speilerei)
+- ChatGPT und Selenium?

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="TC-03-FilterTablets">
+
+    <listeners>
+        <listener class-name="de.proficom.advantageshop.reporting.ExtentTestListener"></listener>
+    </listeners>
+
+    <test name="TC-03-FilterTablets">
+        <classes>
+            <class name="de.proficom.advantageshop.tests.TabletFiltering"/>
+        </classes>
+    </test>
+
+</suite>
