@@ -24,7 +24,7 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run a one-line script(Test)
-        run: 'mvn clean test -DdriverType="CHROME-REMOTE" -Denvironment="http://advantage.proficom.de:8080/#/" -DsuiteXmlFile="testsuites/advantageshop/All-Tests.xml"'
+        run: 'mvn clean test -DdriverType="CHROME" -Denvironment="http://advantage.proficom.de:8080/#/" -DsuiteXmlFile="testsuites/advantageshop/All-Tests.xml"'
 
       - name: Test Report
         uses: dorny/test-reporter@v1
