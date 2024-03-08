@@ -12,7 +12,7 @@ public abstract class TestBase {
     @BeforeClass
     protected void setUp() {
         // Get system properties
-        String aDriverType = System.getProperty("driverType", "FIREFOX");
+        String aDriverType = System.getProperty("driverType", "FIREFOX-REMOTE");
         String aEnvironment = System.getProperty("environment", "http://advantage.proficom.de:8080/#/");
 
         // Create the specific driver
